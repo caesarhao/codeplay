@@ -64,8 +64,14 @@ def rot_pos_90(pos, axis, sign):
         return (z, y, -x) if sign == +1 else (-z, y, x)
     return (-y, x, z) if sign == +1 else (y, -x, z)
 
+# After rotation around the x-axis towards down, the horizontal axis towards the right side
+# U becomes F, F becomes D, D becomes B, etc
 MAP_X_POS = {"U": "F", "F": "D", "D": "B", "B": "U", "L": "L", "R": "R"}
+# After rotation around the y-axis towards right, the vertical axis towards the up side
+# F becomes R, R becomes B, B becomes L, etc
 MAP_Y_POS = {"F": "R", "R": "B", "B": "L", "L": "F", "U": "U", "D": "D"}
+# After rotation around the z-axis backwards clock, the axis towards outside of paper
+# U becomes L, L becomes D, D becomes R, etc
 MAP_Z_POS = {"U": "L", "L": "D", "D": "R", "R": "U", "F": "F", "B": "B"}
 
 def invert_map(m):
